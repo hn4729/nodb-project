@@ -15,14 +15,15 @@ module.exports = {
 
   update: (req, res) => {
     const updateID = req.params.id;
-    const { title, genre, description } = req.body;
+    const { id, url, title, genre, description } = req.body;
     const favoriteIndex = watchLaterData.findIndex(
       video => video.id == updateID
     );
     let video = watchLaterData[favoriteIndex];
 
     watchLaterData[favoriteIndex] = {
-      id: video.id,
+      id: id || video.id,
+      url: url || video.url,
       title: title || video.title,
       genre: genre || video.genre,
       description: description || video.description

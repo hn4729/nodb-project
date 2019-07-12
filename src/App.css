@@ -7,3 +7,9 @@ html {
   text-align: center;
   font-family: "Roboto";
 }
+
+.add-video-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

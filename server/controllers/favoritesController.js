@@ -23,6 +23,7 @@ module.exports = {
 
     favoritesData[favoriteIndex] = {
       id: video.id,
+      url: video.url,
       title: title || video.title,
       genre: genre || video.genre,
       description: description || video.description

@@ -1,19 +1,30 @@
 import React, { Component } from "react";
+import Modal from "react-awesome-modal";
 import "./App.css";
 import Header from "./components/Header";
 import FavoriteList from "./components/FavoriteList";
 import WatchLaterList from "./components/WatchLaterList";
+import AddVideo from "./components/AddVideo";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "favorites"
+      view: "favorites",
+      visible: false
     };
   }
 
   changeView = newView => {
     this.setState({ view: newView });
+  };
+
+  openModalForm = () => {
+    this.setState({ visible: true });
+  };
+
+  closeModalForm = () => {
+    this.setState({ visible: false });
   };
 
   render() {
@@ -38,8 +49,18 @@ class App extends Component {
               Watch Later
             </button>
           </div>
-          <button>Add Video</button>
+          <button onClick={() => this.openModalForm()}>Add Video</button>
         </nav>
+
+        <Modal
+          visible={this.state.visible}
+          width="40%"
+          height="40%"
+          effect="fadeInUp"
+          onClickAway={() => this.closeModalForm()}
+        >
+          <AddVideo closeModalForm={this.closeModalForm} />
+        </Modal>
 
         {this.state.view === "favorites" ? <FavoriteList /> : null}
         {this.state.view === "later" && (
