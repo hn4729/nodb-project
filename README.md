@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## REQUIRED: `npm install react-awesome-modal`
+
+## REQUIRED: `npm install react-modal-video`
+
 ## Available Scripts
 
 In the project directory, you can run:

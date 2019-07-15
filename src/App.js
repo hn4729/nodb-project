@@ -31,9 +31,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
         <nav>
-          <div>
+          <div className="view-btn">
             <button
               onClick={() => {
                 this.setState({ view: "favorites" });
@@ -49,13 +48,16 @@ class App extends Component {
               Watch Later
             </button>
           </div>
-          <button onClick={() => this.openModalForm()}>Add Video</button>
+          <button
+            className="add-btn fas fa-plus"
+            onClick={() => this.openModalForm()}
+          />
         </nav>
 
         <Modal
           visible={this.state.visible}
           width="40%"
-          height="40%"
+          height="60%"
           effect="fadeInUp"
           onClickAway={() => this.closeModalForm()}
         >

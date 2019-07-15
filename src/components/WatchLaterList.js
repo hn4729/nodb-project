@@ -41,7 +41,7 @@ class WatchLaterList extends Component {
       <div>
         <div className="video-list">
           {this.state.watchLaterVideos.map((video, index) => (
-            <div key={index}>
+            <div className="video-item" key={index}>
               <VideoItem
                 id={video.id}
                 url={video.url}
@@ -50,16 +50,18 @@ class WatchLaterList extends Component {
                 description={video.description}
               />
 
-              <EditVideo
-                id={video.id}
-                url={video.url}
-                title={video.title}
-                genre={video.genre}
-                description={video.description}
-                list={this.state.list}
-                getWatchLater={this.getWatchLater}
-              />
-              <DeleteVideo id={video.id} deleteVideo={this.deleteVideo} />
+              <div className="modify-btns">
+                <EditVideo
+                  id={video.id}
+                  url={video.url}
+                  title={video.title}
+                  genre={video.genre}
+                  description={video.description}
+                  list={this.state.list}
+                  getWatchLater={this.getWatchLater}
+                />
+                <DeleteVideo id={video.id} deleteVideo={this.deleteVideo} />
+              </div>
             </div>
           ))}
         </div>

@@ -26,7 +26,7 @@ class AddVideo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-popup">
         <form
           onSubmit={event => {
             let { url, title, genre, description, option } = this.state;
@@ -62,9 +62,9 @@ class AddVideo extends Component {
               this.props.closeModalForm();
             }
           }}
-          className="add-video-form"
+          className="video-form"
         >
-          <div>
+          <div className="list-btn">
             <label>
               <input
                 type="radio"
@@ -72,8 +72,9 @@ class AddVideo extends Component {
                 value="favorites"
                 defaultChecked
                 onChange={this.handleOption}
+                className="radio-btn"
               />
-              Favorites
+              <span>Favorites</span>
             </label>
             <label>
               <input
@@ -81,31 +82,34 @@ class AddVideo extends Component {
                 name="list"
                 value="watchLater"
                 onChange={this.handleOption}
+                className="radio-btn"
               />
-              Watch Later
+              <span>Watch Later</span>
             </label>
           </div>
           <label>
-            URL
+            <span>URL</span>
             <input type="text" name="url" onChange={this.handleChange} />
           </label>
           <label>
-            Title
+            <span>Title</span>
             <input type="text" name="title" onChange={this.handleChange} />
           </label>
           <label>
-            Genre
+            <span>Genre</span>
             <input type="text" name="genre" onChange={this.handleChange} />
           </label>
           <label>
-            Description
+            <span>Description</span>
             <textarea name="description" onChange={this.handleChange} />
           </label>
-          <div>
-            <button type="reset" onClick={() => this.props.closeModalForm()}>
-              Cancel
-            </button>
-            <button type="submit">Submit</button>
+          <div className="form-button">
+            <button
+              className="far fa-window-close"
+              type="reset"
+              onClick={() => this.props.closeModalForm()}
+            />
+            <button className="fas fa-plus" type="submit" />
           </div>
         </form>
       </div>

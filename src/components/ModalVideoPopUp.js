@@ -36,7 +36,7 @@ class ModalVideoPopUp extends Component {
             onClose={() => this.setState({ isOpen: false })}
           />
         </div>
-        <button onClick={this.openModal}>OPEN VIDEO</button>
+        <i className="fab fa-youtube" onClick={this.openModal} />
       </div>
     );
   }

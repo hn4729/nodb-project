@@ -3,14 +3,13 @@ import ModalVideoPopUp from "./ModalVideoPopUp";
 
 function VideoItem(props) {
   return (
-    <div>
-      <section>
-        <p>{props.title}</p>
-        <ModalVideoPopUp url={props.url} />
-        <p>{props.genre}</p>
-        <p>{props.description}</p>
-      </section>
-    </div>
+    <section>
+      <p>{props.title}</p>
+      <ModalVideoPopUp url={props.url} />
+      <p>{props.genre}</p>
+      <p className="item">Description</p>
+      <p>{props.description}</p>
+    </section>
   );
 }
 
