@@ -8,6 +8,10 @@ html {
   font-family: "Roboto";
 }
 
+header {
+  font-size: 30px;
+}
+
 .add-video-form {
   display: flex;
   flex-direction: column;

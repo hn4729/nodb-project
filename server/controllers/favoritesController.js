@@ -15,7 +15,7 @@ module.exports = {
 
   update: (req, res) => {
     const updateID = req.params.id;
-    const { title, genre, description } = req.body;
+    const { url, title, genre, description } = req.body;
     const favoriteIndex = favoritesData.findIndex(
       video => video.id == updateID
     );
@@ -23,7 +23,7 @@ module.exports = {
 
     favoritesData[favoriteIndex] = {
       id: video.id,
-      url: video.url,
+      url: url || video.url,
       title: title || video.title,
       genre: genre || video.genre,
       description: description || video.description

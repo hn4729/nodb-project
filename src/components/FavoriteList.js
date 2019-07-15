@@ -9,11 +9,16 @@ class FavoriteList extends Component {
     super(props);
     this.state = {
       favoriteVideos: [],
-      error: ""
+      error: "",
+      list: "favorites"
     };
   }
 
   componentDidMount() {
+    this.getFavorites();
+  }
+
+  getFavorites = () => {
     axios
       .get("/api/favorites")
       .then(response => {
@@ -23,7 +28,7 @@ class FavoriteList extends Component {
         console.log(error);
         this.setState({ error: "Unknown Error Occured." });
       });
-  }
+  };
 
   deleteVideo = videoId => {
     axios.delete(`/api/favorites/${videoId}`).then(results => {
@@ -51,6 +56,8 @@ class FavoriteList extends Component {
                 title={video.title}
                 genre={video.genre}
                 description={video.description}
+                list={this.state.list}
+                getFavorites={this.getFavorites}
               />
               <DeleteVideo id={video.id} deleteVideo={this.deleteVideo} />
             </div>
