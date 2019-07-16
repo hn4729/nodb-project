@@ -70,6 +70,12 @@ nav {
   border-radius: 5px;
 }
 
+.view-btn button:active,
+.view-btn button:focus {
+  color: red;
+  background-color: white;
+}
+
 .view-btn button:hover {
   border: 1px solid #121212;
 }
@@ -107,7 +113,7 @@ nav {
 
 .video-item {
   margin-bottom: 20px;
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,7 +168,7 @@ section .fa-youtube {
 }
 
 section .fa-youtube:hover {
-  border: 1px solid #121212;
+  border: 1px solid #282828;
 }
 
 .item {
